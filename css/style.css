@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: orangered;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    position: relative;
+    width: 320px;
+    height: 350px;
+    background: whitesmoke;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgb(41, 41, 41);
+}
+
+.card::before,
+.card::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:  whitesmoke;
+    border-radius: 4px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.card:hover::before{
+    transform: rotate(20deg);
+    box-shadow: 0 2px 10px rgb(41, 41, 41);
+}
+.card:hover::after{
+    transform: rotate(10deg);
+    box-shadow: 0 2px 10px rgb(41, 41, 41);
+}
+.img-box{
+    position: absolute;
+    background-color: rgb(48, 0, 49);
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    transition: 0.5s;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.card:hover .img-box{
+    bottom: 80px;
+}
+.details{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: 60px;
+    text-align: center;
+}
+h2 span{
+    color: orangered;
+}
